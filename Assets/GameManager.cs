@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using UnityEditor;
+using UnityEngine;
 
 public class GameManager : MonoBehaviour
 {
@@ -6,6 +7,13 @@ public class GameManager : MonoBehaviour
     {
         get;
         set; 
+    }
+
+    private int _life = 3;
+    public int Life
+    {
+        get { return _life; }
+        set { _life += value; }
     }
     private static GameManager _instance;
 
@@ -27,6 +35,15 @@ public class GameManager : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Escape))
         {
             Time.timeScale = Time.timeScale > 0 ? 0 : 1;
+        }
+    }
+
+    public void OnDeath()
+    {
+        Life--;
+        if (Life <= 0)
+        {
+            // TODO: Handle game over
         }
     }
 
