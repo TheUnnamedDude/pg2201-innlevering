@@ -19,6 +19,5 @@ public class Ball : MonoBehaviour {
             ballRB.isKinematic = false;
             rigidbody2D.velocity = new Vector2(20, 6);
         }
-            
+        
 	}
-}

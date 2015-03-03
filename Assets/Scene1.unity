@@ -5988,7 +5988,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   moveSpeed: 20
-  boost: 100
 --- !u!50 &1721221409
 Rigidbody2D:
   m_ObjectHideFlags: 0
