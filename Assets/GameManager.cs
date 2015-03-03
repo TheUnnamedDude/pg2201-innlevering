@@ -1,4 +1,6 @@
-﻿public class GameManager
+﻿using UnityEngine;
+
+public class GameManager : MonoBehaviour
 {
     public int Score
     {
@@ -6,16 +8,26 @@
         set; 
     }
     private static GameManager _instance;
+
     public static GameManager Instance
     {
-        get
+        get { return _instance; }
+    }
+
+    public void Awake()
+    {
+        if (_instance == null)
         {
-            return _instance ?? (_instance = new GameManager());
+            _instance = this;
         }
     }
 
-    public GameManager()
+    public void Update()
     {
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            Time.timeScale = Time.timeScale > 0 ? 0 : 1;
+        }
     }
 
 }
