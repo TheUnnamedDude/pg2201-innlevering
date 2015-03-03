@@ -1,17 +1,19 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class Ball : MonoBehaviour {
+public class Ball : MonoBehaviour
+{
 
     private Rigidbody2D ballRB;
     private bool isActive;
-	
-    void Awake()
+
+    private void Awake()
     {
         ballRB = GetComponent<Rigidbody2D>();
     }
 
-	void Update () {
+    private void Update()
+    {
         if (Input.GetKeyDown(KeyCode.Space) && isActive == false)
         {
             transform.parent = null;
@@ -19,5 +21,6 @@ public class Ball : MonoBehaviour {
             ballRB.isKinematic = false;
             rigidbody2D.velocity = new Vector2(20, 6);
         }
-        
-	}
+
+    }
+}
