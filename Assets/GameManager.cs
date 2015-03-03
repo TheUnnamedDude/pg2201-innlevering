@@ -1,4 +1,5 @@
-﻿using UnityEditor;
+﻿using System;
+using UnityEditor;
 using UnityEngine;
 
 public class GameManager : MonoBehaviour
@@ -9,24 +10,20 @@ public class GameManager : MonoBehaviour
         set; 
     }
 
-    private int _life = 3;
-    public int Life
+    private int _lifes = 3;
+    public int Lifes
     {
-        get { return _life; }
-        set { _life += value; }
+        get { return _lifes; }
+        set { _lifes = value; }
     }
-    private static GameManager _instance;
 
-    public static GameManager Instance
-    {
-        get { return _instance; }
-    }
+    public static GameManager Instance { get; private set; }
 
     public void Awake()
     {
-        if (_instance == null)
+        if (Instance == null)
         {
-            _instance = this;
+            Instance = this;
         }
     }
 
@@ -40,11 +37,12 @@ public class GameManager : MonoBehaviour
 
     public void OnDeath()
     {
-        Life--;
-        if (Life <= 0)
+        Lifes--;
+        if (Instance.Lifes <= 0)
         {
-            // TODO: Handle game over
+            // TODO: Game over
         }
+        GameObject.Find("Life").GetComponent<TextMesh>().text = String.Format("Life(s) left: {0}", Lifes);
     }
 
 }

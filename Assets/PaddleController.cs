@@ -2,7 +2,9 @@
 using System.Collections;
 
 public class PaddleController : MonoBehaviour {
-    public float moveSpeed = 10f;
+    public const float normalSpeed = 20f;
+    public const float fastSpeed = 50f;
+    private float currentMovementSpeed = normalSpeed;
 
     void Update()
     {
@@ -11,12 +13,12 @@ public class PaddleController : MonoBehaviour {
         transform.position = pos;
 
         if (Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.LeftArrow))
-            transform.Translate(Vector3.left * moveSpeed * Time.deltaTime);
+            transform.Translate(Vector3.left * currentMovementSpeed * Time.deltaTime);
         if (Input.GetKey(KeyCode.D) || Input.GetKey(KeyCode.RightArrow))
-            transform.Translate(Vector3.right * moveSpeed * Time.deltaTime);
+            transform.Translate(Vector3.right * currentMovementSpeed * Time.deltaTime);
 
         if (Input.GetKey(KeyCode.LeftShift))
-            moveSpeed = 50f;
-        else moveSpeed = 10f;
+            currentMovementSpeed = fastSpeed;
+        else currentMovementSpeed = normalSpeed;
     }
 }
