@@ -64,7 +64,7 @@ public class GameManager : MonoBehaviour
 
     public void CubeRemoved()
     {
-        CubesRemoved--;
+        CubesRemoved++;
         GameObject.Find("Score").GetComponent<TextMesh>().text = string.Format("Score: {0}", Score);
         if (numberOfCubes - CubesRemoved <= 0)
         {
