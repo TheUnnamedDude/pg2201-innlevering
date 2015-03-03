@@ -15,6 +15,8 @@ public class CubeRemover : MonoBehaviour {
 
     void OnCollisionEnter2D(Collision2D collision)
     {
+        GameManager.Instance.Score++;
+        Debug.Log(GameManager.Instance.Score);
         Destroy(gameObject);
     }
     
