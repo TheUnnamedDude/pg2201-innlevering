@@ -4,6 +4,14 @@ using UnityEngine;
 
 public class GameManager : MonoBehaviour
 {
+    private const int numberOfCubes = 88;
+
+    public int CubesRemoved
+    {
+        get;
+        set;
+    }
+
     public int Score
     {
         get;
@@ -33,6 +41,15 @@ public class GameManager : MonoBehaviour
         {
             Time.timeScale = Time.timeScale > 0 ? 0 : 1;
         }
+        else if (Input.GetKeyDown(KeyCode.Backspace))
+        {
+            ResetLevel();
+        }
+    }
+
+    public void ResetLevel()
+    {
+        Application.LoadLevel(Application.loadedLevel);
     }
 
     public void OnDeath()
@@ -42,7 +59,17 @@ public class GameManager : MonoBehaviour
         {
             // TODO: Game over
         }
-        GameObject.Find("Life").GetComponent<TextMesh>().text = String.Format("Life(s) left: {0}", Lifes);
+        GameObject.Find("Life").GetComponent<TextMesh>().text = String.Format("Life(s): {0}", Lifes);
     }
 
+    public void CubeRemoved()
+    {
+        CubesRemoved--;
+        GameObject.Find("Score").GetComponent<TextMesh>().text = string.Format("Score: {0}", Score);
+        if (numberOfCubes - CubesRemoved <= 0)
+        {
+            // TODO: Wonnededed!
+            Debug.Log("You wonnededededed");
+        }
+    }
 }

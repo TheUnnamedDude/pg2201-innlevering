@@ -12,10 +12,7 @@ public class PaddleController : MonoBehaviour {
         pos.x = Mathf.Clamp(pos.x, -1.45f, 27.5f);
         transform.position = pos;
 
-        if (Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.LeftArrow))
-            transform.Translate(Vector3.left * currentMovementSpeed * Time.deltaTime);
-        if (Input.GetKey(KeyCode.D) || Input.GetKey(KeyCode.RightArrow))
-            transform.Translate(Vector3.right * currentMovementSpeed * Time.deltaTime);
+        transform.Translate(new Vector3(Input.GetAxis("Horizontal") * currentMovementSpeed * Time.deltaTime, 0));
 
         if (Input.GetKey(KeyCode.LeftShift))
             currentMovementSpeed = fastSpeed;

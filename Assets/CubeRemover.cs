@@ -2,8 +2,9 @@
 using UnityEngine;
 using System.Collections;
 
-public class CubeRemover : MonoBehaviour {
-
+public class CubeRemover : MonoBehaviour
+{
+    public int pointsWorth = 1;
 	// Use this for initialization
 	void Start () {
 	
@@ -16,9 +17,8 @@ public class CubeRemover : MonoBehaviour {
 
     void OnCollisionEnter2D(Collision2D collision)
     {
-        GameManager.Instance.Score++;
-        GameObject score = GameObject.Find("Score");
-        score.GetComponent<TextMesh>().text = string.Format("Score: {0}", GameManager.Instance.Score);
+        GameManager.Instance.Score += pointsWorth;
+        GameManager.Instance.CubeRemoved();
         Destroy(gameObject);
     }
     
