@@ -7,6 +7,7 @@ public class PaddleController : MonoBehaviour {
     public const float normalSpeed = 20f;
     public const float fastSpeed = 50f;
     private Vector3 defaultPosition;
+    public Camera currentCamera;
 
     void Awake()
     {
@@ -25,7 +26,7 @@ public class PaddleController : MonoBehaviour {
         if (Input.GetMouseButton(0))
         {
             var pos = transform.position;
-            pos.x = Camera.main.ScreenToWorldPoint(Input.mousePosition).x;
+            pos.x = currentCamera.ScreenToWorldPoint(Input.mousePosition).x;
             transform.position = pos;
         }
         else

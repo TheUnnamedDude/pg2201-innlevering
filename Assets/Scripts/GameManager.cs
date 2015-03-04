@@ -4,7 +4,7 @@ using UnityEngine.UI;
 
 public class GameManager : MonoBehaviour
 {
-    private const int numberOfCubes = 88;
+    public int numberOfCubes;
     public GameObject Menu;
     public Text StateText;
     public GameObject ContinueButton;

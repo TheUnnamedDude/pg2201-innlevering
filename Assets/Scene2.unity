@@ -587,7 +587,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 689145697}
         m_MethodName: MuteGameMusic
-        m_Mode: 6
+        m_Mode: 0
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine, Version=0.0.0.0,
@@ -6742,6 +6742,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0db67289579057d4abb41f239f196377, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  numberOfCubes: 75
   Menu: {fileID: 1424891305}
   StateText: {fileID: 984210362}
   ContinueButton: {fileID: 1596903838}
@@ -11698,6 +11699,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f3d18dede77329843919b4199fe530e8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  currentCamera: {fileID: 87648451}
 --- !u!50 &1941582702
 Rigidbody2D:
   m_ObjectHideFlags: 0
@@ -12506,7 +12508,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 689145697}
         m_MethodName: MuteEffects
-        m_Mode: 6
+        m_Mode: 0
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine, Version=0.0.0.0,
