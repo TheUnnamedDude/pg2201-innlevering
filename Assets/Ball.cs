@@ -17,7 +17,7 @@ public class Ball : MonoBehaviour
 
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Space) && isActive == false)
+        if ((Input.GetKeyDown(KeyCode.Space) || Input.GetMouseButton(1)) && isActive == false)
         {
             transform.parent = null;
             isActive = true;
@@ -32,6 +32,7 @@ public class Ball : MonoBehaviour
         isActive = false;
         transform.position = defaultPosition;
         transform.parent = GameObject.Find("Paddle").transform;
+        collisioncounter = 0;
     }
 
     private void OnCollisionEnter2D(Collision2D other)
