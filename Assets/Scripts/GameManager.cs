@@ -44,6 +44,10 @@ public class GameManager : MonoBehaviour
         {
             ResetLevel();
         }
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            GUIToggle();
+        }
     }
 
     public void ResetLevel()
@@ -76,5 +80,9 @@ public class GameManager : MonoBehaviour
             // TODO: Wonnededed!
             Debug.Log("You wonnededededed");
         }
+    }
+    public void GUIToggle()
+    {
+        GameObject.Find("Canvas").SetActive(false);
     }
 }
