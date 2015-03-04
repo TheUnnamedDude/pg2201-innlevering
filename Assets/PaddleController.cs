@@ -5,6 +5,17 @@ public class PaddleController : MonoBehaviour {
     public const float normalSpeed = 20f;
     public const float fastSpeed = 50f;
     private float currentMovementSpeed = normalSpeed;
+    private Vector3 defaultPosition;
+
+    void Awake()
+    {
+        defaultPosition = transform.position;
+    }
+
+    public void Reset()
+    {
+        transform.position = defaultPosition;
+    }
 
     void Update()
     {

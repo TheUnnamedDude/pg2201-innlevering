@@ -7,10 +7,12 @@ public class Ball : MonoBehaviour
     public float moveSpeed = 7f;
     private Rigidbody2D ballRB;
     private bool isActive;
+    private Vector3 defaultPosition;
 
     private void Awake()
     {
         ballRB = GetComponent<Rigidbody2D>();
+        defaultPosition = transform.position;
     }
 
     private void Update()
@@ -23,18 +25,26 @@ public class Ball : MonoBehaviour
             rigidbody2D.velocity = new Vector2(moveSpeed, moveSpeed);
         }
     }
+
+    public void Reset()
+    {
+        rigidbody2D.velocity = Vector2.zero;
+        isActive = false;
+        transform.position = defaultPosition;
+        transform.parent = GameObject.Find("Paddle").transform;
+    }
+
     private void OnCollisionEnter2D(Collision2D other)
     {
-        collisioncounter++;
+        Debug.Log(rigidbody2D.velocity);
         if (collisioncounter == 4)
         {
             moveSpeed += 5;
-            rigidbody2D.velocity = new Vector2(moveSpeed, moveSpeed);
+            rigidbody2D.AddForce(rigidbody2D.velocity.normalized * 0.025f);
         }
         else if (collisioncounter == 12)
         {
-            moveSpeed += 5;
-            rigidbody2D.velocity = new Vector2(moveSpeed, moveSpeed);
+            rigidbody2D.AddForce(rigidbody2D.velocity.normalized * 0.025f);
         }
     }
 }

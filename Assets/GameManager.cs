@@ -59,6 +59,11 @@ public class GameManager : MonoBehaviour
         {
             // TODO: Game over
         }
+        else
+        {
+            GameObject.Find("Paddle").GetComponent<PaddleController>().Reset();
+            GameObject.Find("Sphere").GetComponent<Ball>().Reset();
+        }
         GameObject.Find("Life").GetComponent<TextMesh>().text = String.Format("Life(s): {0}", Lifes);
     }
 
