@@ -14,6 +14,7 @@ public class LineOfDeath : MonoBehaviour {
 	}
     void OnTriggerEnter2D(Collider2D other)
     {
+        GameObject.Find("Paddle").transform.localScale = new Vector3(8, 1, 1);
         GameManager.Instance.OnDeath();
     }
 }
