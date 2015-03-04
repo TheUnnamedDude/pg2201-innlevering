@@ -36,10 +36,9 @@ public class Ball : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D other)
     {
-        Debug.Log(rigidbody2D.velocity);
+        collisioncounter++;
         if (collisioncounter == 4)
         {
-            moveSpeed += 5;
             rigidbody2D.AddForce(rigidbody2D.velocity.normalized * 0.025f);
         }
         else if (collisioncounter == 12)

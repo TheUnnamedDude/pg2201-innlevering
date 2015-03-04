@@ -58,6 +58,7 @@ public class GameManager : MonoBehaviour
         if (Instance.Lifes <= 0)
         {
             // TODO: Game over
+            Debug.Log("GEIM OVR");
         }
         else
         {
