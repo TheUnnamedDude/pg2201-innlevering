@@ -20,6 +20,8 @@ public class PaddleController : MonoBehaviour {
 
     void Update()
     {
+        if (GameManager.Instance.Paused)
+            return;
         if (Input.GetMouseButton(0))
         {
             var pos = transform.position;

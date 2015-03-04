@@ -17,7 +17,7 @@ public class Ball : MonoBehaviour
 
     private void Update()
     {
-        if ((Input.GetKeyDown(KeyCode.Space) || Input.GetMouseButton(1)) && isActive == false)
+        if ((Input.GetKeyDown(KeyCode.Space) || Input.GetMouseButton(1)) && isActive == false && !GameManager.Instance.Paused)
         {
             transform.parent = null;
             isActive = true;

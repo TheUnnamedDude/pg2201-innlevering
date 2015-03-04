@@ -1,9 +1,15 @@
 ﻿using System;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class GameManager : MonoBehaviour
 {
     private const int numberOfCubes = 88;
+    public GameObject Menu;
+    public Text StateText;
+    public GameObject ContinueButton;
+
+    public bool Paused { get; private set; }
 
     public int CubesRemoved
     {
@@ -38,15 +44,14 @@ public class GameManager : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.Escape))
         {
-            Time.timeScale = Time.timeScale > 0 ? 0 : 1;
+            GUIToggle("Paused");
         }
-        else if (Input.GetKeyDown(KeyCode.Backspace))
+        if (!Paused)
         {
-            ResetLevel();
-        }
-        if (Input.GetKeyDown(KeyCode.Escape))
-        {
-            GUIToggle();
+            if (Input.GetKeyDown(KeyCode.Backspace))
+            {
+                ResetLevel();
+            }
         }
     }
 
@@ -60,6 +65,7 @@ public class GameManager : MonoBehaviour
         Lifes--;
         if (Instance.Lifes <= 0)
         {
+            GUIToggle("Game over", false);
             // TODO: Game over
             Debug.Log("GEIM OVR");
         }
@@ -77,12 +83,15 @@ public class GameManager : MonoBehaviour
         GameObject.Find("Score").GetComponent<TextMesh>().text = string.Format("Score: {0}", Score);
         if (numberOfCubes - CubesRemoved <= 0)
         {
-            // TODO: Wonnededed!
-            Debug.Log("You wonnededededed");
+            GUIToggle(string.Format("You finished the game with {0} points", Score), false);
         }
     }
-    public void GUIToggle()
+    public void GUIToggle(string title, bool showContinue = true)
     {
-        GameObject.Find("Canvas").SetActive(false);
+        Paused = !Paused;
+        Time.timeScale = Paused ? 0 : 1;
+        Menu.SetActive(Paused);
+        ContinueButton.SetActive(showContinue);
+        StateText.text = title;
     }
 }
