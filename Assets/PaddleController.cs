@@ -1,8 +1,7 @@
 ﻿   using UnityEngine;
-using System.Collections;
+    using System.Collections;
    using System.Reflection;
    using System.Security.Cryptography.X509Certificates;
-   using UnityEditor;
 
 public class PaddleController : MonoBehaviour {
     public const float normalSpeed = 20f;
