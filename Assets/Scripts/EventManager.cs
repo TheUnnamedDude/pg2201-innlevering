@@ -20,7 +20,7 @@ public class EventManager : MonoBehaviour {
 
     public void OnQuitPressed()
     {
-        Application.Quit();
+        Application.LoadLevel(0);
     }
 
     public void OnRestartPressed()

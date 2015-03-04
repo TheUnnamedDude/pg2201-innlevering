@@ -8,6 +8,7 @@ public class Ball : MonoBehaviour
     private Rigidbody2D ballRB;
     private bool isActive;
     private Vector3 defaultPosition;
+	public AudioClip boop;
 
     private void Awake()
     {
@@ -46,5 +47,6 @@ public class Ball : MonoBehaviour
         {
             rigidbody2D.AddForce(rigidbody2D.velocity.normalized * 0.025f);
         }
+		audio.PlayOneShot (boop);
     }
 }
