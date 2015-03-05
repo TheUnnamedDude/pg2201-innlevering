@@ -28,4 +28,9 @@ public class EventManager : MonoBehaviour {
         GameManager.Instance.GUIToggle("Paused");
         GameManager.Instance.ResetLevel();
     }
+
+    public void OnNextLevelPressed()
+    {
+        Application.LoadLevel(2);
+    }
 }

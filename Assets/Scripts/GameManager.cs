@@ -8,6 +8,7 @@ public class GameManager : MonoBehaviour
     public GameObject Menu;
     public Text StateText;
     public GameObject ContinueButton;
+    public GameObject NextLevelButton;
 
     public bool Paused { get; private set; }
 
@@ -83,7 +84,7 @@ public class GameManager : MonoBehaviour
         GameObject.Find("Score").GetComponent<TextMesh>().text = string.Format("Score: {0}", Score);
         if (numberOfCubes - CubesRemoved <= 0)
         {
-            GUIToggle(string.Format("You finished the game with {0} points", Score), false);
+            NextLevel(string.Format("You finished the level with {0} points", Score));
         }
     }
     public void GUIToggle(string title, bool showContinue = true)
@@ -92,6 +93,13 @@ public class GameManager : MonoBehaviour
         Time.timeScale = Paused ? 0 : 1;
         Menu.SetActive(Paused);
         ContinueButton.SetActive(showContinue);
+        StateText.text = title;
+    }
+    public void NextLevel(string title)
+    {
+        Time.timeScale = 0;
+        Menu.SetActive(true);
+        NextLevelButton.SetActive(true);
         StateText.text = title;
     }
 }
