@@ -35,6 +35,7 @@ public class GameManager : MonoBehaviour
 
     public void Awake()
     {
+        Time.timeScale = 1;
         if (Instance == null)
         {
             Instance = this;
@@ -101,5 +102,6 @@ public class GameManager : MonoBehaviour
         Menu.SetActive(true);
         NextLevelButton.SetActive(true);
         StateText.text = title;
+        NextLevelButton.SetActive(true);
     }
 }
