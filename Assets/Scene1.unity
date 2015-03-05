@@ -7645,6 +7645,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 1086363272}
   - 114: {fileID: 1086363271}
+  - 114: {fileID: 1086363273}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: Untagged
@@ -7777,6 +7778,17 @@ Transform:
   - {fileID: 1424891306}
   m_Father: {fileID: 0}
   m_RootOrder: 0
+--- !u!114 &1086363273
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1086363270}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cb856c3364441cb4d98b75beedd830c8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1101986097
 GameObject:
   m_ObjectHideFlags: 0
@@ -11049,9 +11061,9 @@ Rigidbody2D:
   m_GravityScale: 0
   m_FixedAngle: 1
   m_IsKinematic: 0
-  m_Interpolate: 0
+  m_Interpolate: 2
   m_SleepingMode: 2
-  m_CollisionDetection: 0
+  m_CollisionDetection: 1
 --- !u!33 &1440714809
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -14543,6 +14555,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   currentCamera: {fileID: 650114877}
+  SlowMoScoreDecrease: 1
 --- !u!50 &1941582702
 Rigidbody2D:
   m_ObjectHideFlags: 0

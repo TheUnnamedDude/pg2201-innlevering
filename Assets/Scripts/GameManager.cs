@@ -18,7 +18,7 @@ public class GameManager : MonoBehaviour
         set;
     }
 
-    public int Score
+    public float Score
     {
         get;
         set; 
