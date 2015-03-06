@@ -1,9 +1,7 @@
-﻿   using UnityEngine;
-    using System.Collections;
-   using System.Reflection;
-   using System.Security.Cryptography.X509Certificates;
+﻿using UnityEngine;
 
-public class PaddleController : MonoBehaviour {
+public class PaddleController : MonoBehaviour
+{
     public const float normalSpeed = 20f;
     public const float fastSpeed = 50f;
     private Vector3 defaultPosition;
@@ -35,7 +33,7 @@ public class PaddleController : MonoBehaviour {
             var currentMovementSpeed = Input.GetKey(KeyCode.LeftShift) ? fastSpeed : normalSpeed;
             transform.Translate(new Vector3(Input.GetAxis("Horizontal") * currentMovementSpeed * Time.deltaTime, 0));
         }
-        
+
         var leftWallBounds = GameObject.Find("LeftWall").collider2D.bounds;
         var rightWallBounds = GameObject.Find("RightWall").collider2D.bounds;
         var paddleBounds = collider2D.bounds;

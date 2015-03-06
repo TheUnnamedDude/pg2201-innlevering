@@ -21,7 +21,7 @@ public class GameManager : MonoBehaviour
     public float Score
     {
         get;
-        set; 
+        set;
     }
 
     private int _lifes = 3;
@@ -68,7 +68,6 @@ public class GameManager : MonoBehaviour
         if (Instance.Lifes <= 0)
         {
             GUIToggle("Game over", false);
-            // TODO: Game over
             Debug.Log("GEIM OVR");
         }
         else
@@ -96,16 +95,17 @@ public class GameManager : MonoBehaviour
         ContinueButton.SetActive(showContinue);
         StateText.text = title;
     }
-    public void NextLevel(string title, bool ShowNextLevel = true)
+
+    public void NextLevel(string title, bool showNextLevel = true)
     {
         Paused = !Paused;
         Time.timeScale = Paused ? 0 : 1;
         Menu.SetActive(Paused);
-        NextLevelButton.SetActive(ShowNextLevel);
+        NextLevelButton.SetActive(showNextLevel);
         StateText.text = title;
         if (Application.loadedLevel == 2)
         {
-            NextLevelButton.SetActive(!ShowNextLevel);
+            NextLevelButton.SetActive(!showNextLevel);
         }
     }
 }

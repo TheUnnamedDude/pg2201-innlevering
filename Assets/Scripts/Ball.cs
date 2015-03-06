@@ -1,14 +1,13 @@
 ﻿using UnityEngine;
-using System.Collections;
 
 public class Ball : MonoBehaviour
 {
-    public int collisioncounter = 0;
+    private int collisionCounter = 0;
     public float moveSpeed = 7f;
     private Rigidbody2D ballRB;
     private bool isActive;
     private Vector3 defaultPosition;
-	public AudioClip boop;
+    public AudioClip boop;
 
     private void Awake()
     {
@@ -33,20 +32,16 @@ public class Ball : MonoBehaviour
         isActive = false;
         transform.position = defaultPosition;
         transform.parent = GameObject.Find("Paddle").transform;
-        collisioncounter = 0;
+        collisionCounter = 0;
     }
 
     private void OnCollisionEnter2D(Collision2D other)
     {
-        collisioncounter++;
-        if (collisioncounter == 4)
+        collisionCounter++;
+        if (collisionCounter == 4 || collisionCounter == 12)
         {
             rigidbody2D.AddForce(rigidbody2D.velocity.normalized * 0.035f);
         }
-        else if (collisioncounter == 12)
-        {
-            rigidbody2D.AddForce(rigidbody2D.velocity.normalized * 0.035f);
-        }
-		audio.PlayOneShot (boop);
+        audio.PlayOneShot(boop);
     }
 }
