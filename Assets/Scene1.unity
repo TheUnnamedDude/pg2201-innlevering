@@ -687,6 +687,14 @@ Prefab:
       propertyPath: m_RootOrder
       value: 5
       objectReference: {fileID: 0}
+    - target: {fileID: 19828756, guid: ce1eb27a72d11f24e9b414d0075c700a, type: 2}
+      propertyPath: ColorModule.enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 19828756, guid: ce1eb27a72d11f24e9b414d0075c700a, type: 2}
+      propertyPath: RotationBySpeedModule.curve.scalar
+      value: .785398126
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: ce1eb27a72d11f24e9b414d0075c700a, type: 2}
   m_RootGameObject: {fileID: 1299282549}
@@ -4399,7 +4407,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 689145690}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f642d0367640018489a3c2750ec6fcc5, type: 3}
+  m_Script: {fileID: 11500000, guid: 871060612034f7444b8753f6a41b753e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!114 &689145692
@@ -10155,7 +10163,7 @@ ParticleSystem:
   RotationBySpeedModule:
     enabled: 0
     curve:
-      scalar: .785398185
+      scalar: .785398126
       maxCurve:
         serializedVersion: 2
         m_Curve:
