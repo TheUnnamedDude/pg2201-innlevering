@@ -83,7 +83,6 @@ GameObject:
   m_Component:
   - 224: {fileID: 230851838}
   - 114: {fileID: 230851840}
-  - 114: {fileID: 230851841}
   m_Layer: 5
   m_Name: Toggle
   m_TagString: Untagged
@@ -167,17 +166,6 @@ MonoBehaviour:
     m_TypeName: UnityEngine.UI.Toggle+ToggleEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
   m_IsOn: 1
---- !u!114 &230851841
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 230851837}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 871060612034f7444b8753f6a41b753e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &333460535
 GameObject:
   m_ObjectHideFlags: 0

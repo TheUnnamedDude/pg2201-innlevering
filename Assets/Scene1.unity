@@ -4407,7 +4407,6 @@ GameObject:
   - 114: {fileID: 689145692}
   - 114: {fileID: 689145691}
   - 82: {fileID: 689145696}
-  - 114: {fileID: 689145697}
   m_Layer: 0
   m_Name: EventSystem
   m_TagString: Untagged
@@ -4539,17 +4538,6 @@ AudioSource:
       tangentMode: 0
     m_PreInfinity: 2
     m_PostInfinity: 2
---- !u!114 &689145697
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 689145690}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 871060612034f7444b8753f6a41b753e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1001 &697924331
 Prefab:
   m_ObjectHideFlags: 0
@@ -12665,7 +12653,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2034082cea6cba247bd78e0e74271757, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  collisioncounter: 0
   moveSpeed: 7
   boop: {fileID: 8300000, guid: 3312a0376e7082843ad5022c1b1b34b9, type: 3}
 --- !u!50 &1702443842
