@@ -340,7 +340,7 @@ MonoBehaviour:
   onValueChanged:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 689145697}
+      - m_Target: {fileID: 689145691}
         m_MethodName: MuteGameMusic
         m_Mode: 0
         m_Arguments:
@@ -3094,6 +3094,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 473744451}
   - 212: {fileID: 473744450}
+  - 95: {fileID: 473744452}
   m_Layer: 0
   m_Name: Background
   m_TagString: Untagged
@@ -3130,11 +3131,26 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 473744449}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 11.3999996, y: -7.5999999, z: 7.80000019}
-  m_LocalScale: {x: 4, y: 4, z: 1}
+  m_LocalPosition: {x: 12.4899998, y: -11.0900002, z: 7.80000019}
+  m_LocalScale: {x: 3.83999991, y: 3.83999991, z: .959999979}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 3
+--- !u!95 &473744452
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 473744449}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: de1af7ff3e05464449007a06d2de0779, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 1
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
 --- !u!1001 &491868096
 Prefab:
   m_ObjectHideFlags: 0
@@ -4407,7 +4423,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 689145690}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 871060612034f7444b8753f6a41b753e, type: 3}
+  m_Script: {fileID: 11500000, guid: f642d0367640018489a3c2750ec6fcc5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!114 &689145692
@@ -15398,7 +15414,7 @@ MonoBehaviour:
   onValueChanged:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 689145697}
+      - m_Target: {fileID: 689145691}
         m_MethodName: MuteEffects
         m_Mode: 0
         m_Arguments:
