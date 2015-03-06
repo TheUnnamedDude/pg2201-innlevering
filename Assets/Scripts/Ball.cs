@@ -41,11 +41,11 @@ public class Ball : MonoBehaviour
         collisioncounter++;
         if (collisioncounter == 4)
         {
-            rigidbody2D.AddForce(rigidbody2D.velocity.normalized * 0.025f);
+            rigidbody2D.AddForce(rigidbody2D.velocity.normalized * 0.035f);
         }
         else if (collisioncounter == 12)
         {
-            rigidbody2D.AddForce(rigidbody2D.velocity.normalized * 0.025f);
+            rigidbody2D.AddForce(rigidbody2D.velocity.normalized * 0.035f);
         }
 		audio.PlayOneShot (boop);
     }

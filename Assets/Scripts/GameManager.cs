@@ -96,12 +96,16 @@ public class GameManager : MonoBehaviour
         ContinueButton.SetActive(showContinue);
         StateText.text = title;
     }
-    public void NextLevel(string title)
+    public void NextLevel(string title, bool ShowNextLevel = true)
     {
-        Time.timeScale = 0;
-        Menu.SetActive(true);
-        NextLevelButton.SetActive(true);
+        Paused = !Paused;
+        Time.timeScale = Paused ? 0 : 1;
+        Menu.SetActive(Paused);
+        NextLevelButton.SetActive(ShowNextLevel);
         StateText.text = title;
-        NextLevelButton.SetActive(true);
+        if (Application.loadedLevel == 2)
+        {
+            NextLevelButton.SetActive(!ShowNextLevel);
+        }
     }
 }

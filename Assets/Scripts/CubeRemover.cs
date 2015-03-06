@@ -6,9 +6,10 @@ public class CubeRemover : MonoBehaviour
 {
    
     public int pointsWorth = 1;
+
 	// Use this for initialization
 	void Start () {
-	
+        
 	}
 	
 	// Update is called once per frame
