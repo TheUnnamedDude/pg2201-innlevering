@@ -102,10 +102,10 @@ public class GameManager : MonoBehaviour
         Paused = !Paused;
         Time.timeScale = Paused ? 0 : 1;
         Menu.SetActive(Paused);
+        StateText.text = title;
         if (NextLevelButton != null)
         { 
             NextLevelButton.SetActive(showNextLevel);
-            StateText.text = title;
         }
     }
 }
