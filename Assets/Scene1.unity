@@ -4348,7 +4348,7 @@ TextMesh:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 686450947}
-  m_Text: 'Score:'
+  m_Text: 'Score: 0'
   m_OffsetZ: 0
   m_CharacterSize: 1
   m_LineSpacing: 1
@@ -11221,7 +11221,7 @@ TextMesh:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1446783491}
-  m_Text: 'Life:'
+  m_Text: 'Life(s): 3'
   m_OffsetZ: 0
   m_CharacterSize: 1
   m_LineSpacing: 1

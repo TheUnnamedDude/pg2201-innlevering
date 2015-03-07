@@ -84,6 +84,7 @@ public class GameManager : MonoBehaviour
         GameObject.Find("Score").GetComponent<TextMesh>().text = string.Format("Score: {0}", Score);
         if (numberOfCubes - CubesRemoved <= 0)
         {
+            ContinueButton.SetActive(false);
             NextLevel(string.Format("You finished the level with {0} points", Score));
         }
     }
@@ -101,11 +102,10 @@ public class GameManager : MonoBehaviour
         Paused = !Paused;
         Time.timeScale = Paused ? 0 : 1;
         Menu.SetActive(Paused);
-        NextLevelButton.SetActive(showNextLevel);
-        StateText.text = title;
-        if (Application.loadedLevel == 2)
-        {
-            NextLevelButton.SetActive(!showNextLevel);
+        if (NextLevelButton != null)
+        { 
+            NextLevelButton.SetActive(showNextLevel);
+            StateText.text = title;
         }
     }
 }
